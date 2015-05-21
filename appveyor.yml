@@ -1,9 +1,9 @@
 version: 1.0.{build}.0
 
 install:
-- ps: "$Source = \"http://qmcdn.blob.core.windows.net/release-unstable/en-us/Quamotion.Setup.msi\"
+- ps: $Source = \"http://qmcdn.blob.core.windows.net/release-unstable/en-us/Quamotion.Setup.msi\"
 - ps: $destination = \".\\Quamotion.Setup.msi\"
-- ps: Invoke-WebRequest $source -OutFile $destination"
+- ps: Invoke-WebRequest $source -OutFile $destination
 
 build:
   verbosity: minimal
