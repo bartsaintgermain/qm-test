@@ -1,14 +1,15 @@
 version: 1.0.{build}.0
 
 environment:
-  rtkUser:
+  rtkUserName:
     secure: fNrV+FdqnGE/HKs/4C4rPh7VmjsvPNbks4Enmrma/SM=
   rtkPassword:
     secure: wSvwmRlrlui6EZprPKIPfw==
 
 install:
-  - ps : echo $env:rtkUser
+  - ps : echo $env:rtkUserName
   - cmd : PowerShell -ExecutionPolicy unrestricted -file qm-setup.ps1
+  - cmd : PowerShell -ExecutionPolicy unrestricted -file rtk-init.ps1
 
 build_script:
   - msbuild qm-test\qm-test.csproj /p:Configuration=Release /p:Platform=AnyCPU /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
