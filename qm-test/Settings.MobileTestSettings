@@ -1,5 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <settings>
-  <application/>
-  <devices/>
+  <replaySettings restartApplication="true" reinstallApplication="true" clearApplicationSettings="true" />
+  <spySettings restartApplication="false" reinstallApplication="false" clearApplicationSettings="false" />
+  <application path="apps\com.lufthansa.android.lufthansa-1.apk" />
+  <devices>
+    <device deviceId="0996dd5d027f6c8b" providerId="1960c684-870e-43ce-9f6f-709a55ccf540" />
+  </devices>
 </settings>
