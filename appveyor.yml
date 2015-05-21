@@ -1,6 +1,13 @@
 version: 1.0.{build}.0
 
+environment:
+  rtkUser:
+	secure: fNrV+FdqnGE/HKs/4C4rPh7VmjsvPNbks4Enmrma/SM=
+  rtkPassword:
+    secure: wSvwmRlrlui6EZprPKIPfw==
+
 install:
+- cmd : echo $rtkUser
 - cmd : PowerShell -ExecutionPolicy unrestricted -file qm-setup.ps1
 
 build_script:
