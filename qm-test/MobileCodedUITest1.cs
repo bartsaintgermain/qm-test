@@ -21,7 +21,7 @@ namespace qm_test
         [DeploymentItem(@"apps\", @"apps\")]
         public void MobileCodedUITestMethod1()
         {
-            // To generate code for this test, select "Generate Code for Coded UI Test" from the shortcut menu and select one of the menu items.
+            Assert.IsTrue(true);
         }
     }
 }

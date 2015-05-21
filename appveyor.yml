@@ -1,17 +1,7 @@
 version: 1.0.{build}.0
 
 install:
-- ps: $Source = "http://qmcdn.blob.core.windows.net/release-unstable/en-us/Quamotion.Setup.msi"
-- ps: $msiFile = ".\Quamotion.Setup.msi"
-- ps: Invoke-WebRequest $source -OutFile $destination
-- ps: $msiArguments = "ADDLOCAL=ALL /qn /i ""$msiFile"""
-- ps: $process = Start-Process -FilePath "msiexec.exe" -ArgumentList $msiArguments -Wait -Passthru
-
-- ps: $Source = "https://appkitbox.com/en/wp-content/download/remotetestkit-en.exe"
-- ps: $msiFile = ".\remotetestkit-en.exe"
-- ps: Invoke-WebRequest $source -OutFile $destination
-- ps: $msiArguments = "ADDLOCAL=ALL /qn /i ""$msiFile"""
-- ps: $process = Start-Process -FilePath "msiexec.exe" -ArgumentList $msiArguments -Wait -Passthru
+- cmd : PowerShell -ExecutionPolicy unrestricted -file qm-setup.ps1
 
 build_script:
   - msbuild qm-test\qm-test.csproj /p:Configuration=Release /p:Platform=AnyCPU /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
