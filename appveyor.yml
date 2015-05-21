@@ -7,7 +7,7 @@ environment:
     secure: wSvwmRlrlui6EZprPKIPfw==
 
 install:
-- cmd : echo $rtkUser
+- cmd : echo $env:rtkUser
 - cmd : PowerShell -ExecutionPolicy unrestricted -file qm-setup.ps1
 
 build_script:
