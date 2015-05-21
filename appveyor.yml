@@ -1,9 +1,8 @@
 version: 1.0.{build}.0
 
 install:
-- ps: $Source = \"http://qmcdn.blob.core.windows.net/release-unstable/en-us/Quamotion.Setup.msi\"
-- ps: $destination = \".\\Quamotion.Setup.msi\"
+- ps: $Source = "http://qmcdn.blob.core.windows.net/release-unstable/en-us/Quamotion.Setup.msi"
+- ps: $msiFile = ".\Quamotion.Setup.msi"
 - ps: Invoke-WebRequest $source -OutFile $destination
-
-build:
-  verbosity: minimal
+- ps: $msiArguments = "ADDLOCAL=ALL /l*v ""$msiLogFile"" /qn /i ""$msiFile"""
+- ps: $process = Start-Process -FilePath "msiexec.exe" -ArgumentList $msiArguments -Wait -Passthru
