@@ -7,8 +7,8 @@ environment:
     secure: wSvwmRlrlui6EZprPKIPfw==
 
 install:
-- cmd : echo $env:rtkUser
-- cmd : PowerShell -ExecutionPolicy unrestricted -file qm-setup.ps1
+  - ps : echo $env:rtkUser
+  - cmd : PowerShell -ExecutionPolicy unrestricted -file qm-setup.ps1
 
 build_script:
   - msbuild qm-test\qm-test.csproj /p:Configuration=Release /p:Platform=AnyCPU /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
