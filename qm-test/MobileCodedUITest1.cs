@@ -20,28 +20,31 @@ namespace qm_test
     [CodedUITest]
     public class MobileCodedUITest1 : MobileTest
     {
-
-        /// <summary>
-        /// Initializes the test. Deploys the app on the device, starts the app on the device and initializes
-        /// a connection to the automation provider running ont he device.
-        /// </summary>
-        [TestInitialize]
-        public override void Initialize()
-        {
-            //base.Initialize();
-        }
         [TestMethod]
         [DeploymentItem("Settings.MobileTestSettings")]
         [DeploymentItem(@"apps\", @"apps\")]
         public void MobileCodedUITestMethod1()
         {
-            var settings = MobileTestSettings.Open(this.MobileTestSettingsFile);
-            TargetDevice targetDevice = settings.Devices.First();
-            IDeviceProvider deviceprovider = DeviceProviderFactory.Instance.GetProvider(targetDevice.ProviderId);
-            var devices = deviceprovider.Devices;
-            Assert.IsTrue(devices.Count > 200, String.Format("{0} devices found", devices.Count));
-            base.Initialize();
+            var continueAsGuest = UIMap.UILoginActivityactivity.UIGroupgroup.UIDrawer_layoutgroup.UIGroupgroup.UIGroupgroup1.UIGroupgroup.UILinearLayoutLinearLayout.UILinearLayoutLinearLayout1.ContinueAsGuest;
+            var checkFlightStatus = UIMap.UILoginActivityactivity.UIGroupgroup.UIDrawer_layoutgroup.UIGroupgroup.UILinearLayoutLinearLayout.UIGroupgroup.UIGroupgroup1.UILinearLayoutLinearLayout.UILinearLayoutLinearLayout1.UIGroupgroup.CheckFlightStatus;
 
+            Gesture.Tap(continueAsGuest);
+            Assert.IsTrue(checkFlightStatus.WaitForControlExist(3000));
         }
+
+        public UIMap UIMap
+        {
+            get
+            {
+                if ((this.map == null))
+                {
+                    this.map = new UIMap();
+                }
+
+                return this.map;
+            }
+        }
+
+        private UIMap map;
     }
 }

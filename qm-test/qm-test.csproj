@@ -47,12 +47,19 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MobileCodedUITest1.cs" />
     <Compile Include="AssemblyMethods.cs" />
+    <Compile Include="UIMap.cs">
+      <DependentUpon>UIMap.uitest</DependentUpon>
+    </Compile>
+    <Compile Include="UIMap.Designer.cs">
+      <DependentUpon>UIMap.uitest</DependentUpon>
+    </Compile>
     <None Include="apps\com.lufthansa.android.lufthansa-1.apk">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Settings.MobileTestSettings">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="UIMap.uitest" />
   </ItemGroup>
   <!-- Quamotion references -->
   <PropertyGroup>
