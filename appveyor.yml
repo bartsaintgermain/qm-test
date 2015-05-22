@@ -4,11 +4,9 @@ environment:
   rtkUserName:
     secure: fNrV+FdqnGE/HKs/4C4rPh7VmjsvPNbks4Enmrma/SM=
   rtkPassword:
-    secure: U7XxTiSQEOOvX2sK4XQYXg==
+    secure: wSvwmRlrlui6EZprPKIPfw==
 
 install:
-  - ps : echo $env:rtkUserName
-  - ps : echo $env:rtkPassword
   - cmd : PowerShell -ExecutionPolicy unrestricted -file qm-setup.ps1
   - cmd : C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy unrestricted -file rtk-init.ps1
   - cmd : C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy unrestricted -file rtk-init.ps1
