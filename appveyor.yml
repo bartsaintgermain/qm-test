@@ -9,9 +9,8 @@ environment:
 install:
   - cmd : PowerShell -ExecutionPolicy unrestricted -file qm-setup.ps1
   - cmd : C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy unrestricted -file rtk-init.ps1
-  - cmd : C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy unrestricted -file rtk-init.ps1
 
 build_script:
   - msbuild qm-test\qm-test.csproj /p:Configuration=Release /p:Platform=AnyCPU /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 after_test:
-  -cmd : C:\Progra~2\Quamotion\bin\Quamotion.CommandLine.exe' -m Harvest
+  -cmd : C:\Progra~2\Quamotion\bin\Quamotion.CommandLine.exe -m Harvest
