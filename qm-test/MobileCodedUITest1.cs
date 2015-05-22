@@ -26,7 +26,6 @@ namespace qm_test
         [TestInitialize]
         public override void Initialize()
         {
-
             //base.Initialize();
         }
         [TestMethod]
@@ -38,7 +37,7 @@ namespace qm_test
             TargetDevice targetDevice = settings.Devices.First();
             IDeviceProvider deviceprovider = DeviceProviderFactory.Instance.GetProvider(targetDevice.ProviderId);
             var devices = deviceprovider.Devices;
-            Assert.IsTrue(devices.Count > 0, String.Format("{0} devices found", devices.Count));
+            Assert.IsTrue(devices.Count == 1, String.Format("{0} devices found", devices.Count));
         }
     }
 }
