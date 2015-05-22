@@ -29,10 +29,10 @@ namespace qm_test
         [AssemblyInitialize]
         public static void Intialize(TestContext context)
         {
-            Type uITestUtilitiesType = typeof(QueryElement).Assembly.GetType("Microsoft.VisualStudio.TestTools.UITest.Extension.UITestUtilities");
-            FieldInfo userInteractiveFieldInfo = uITestUtilitiesType.GetField("UserInteractive", BindingFlags.Static |BindingFlags.Public | BindingFlags.NonPublic);
-            userInteractiveFieldInfo.SetValue(null, true);
-
+            //Type uITestUtilitiesType = typeof(Playback).Assembly.GetType("Microsoft.VisualStudio.TestTools.UITest.Extension.UITestUtilities");
+            //FieldInfo userInteractiveFieldInfo = uITestUtilitiesType.GetField("UserInteractive", BindingFlags.Static |BindingFlags.Public | BindingFlags.NonPublic);
+            //userInteractiveFieldInfo.SetValue(null, true);
+            Playback.IsInitialized = true;
             AssemblyHelpers.Initialize(context);
         }
 
