@@ -9,6 +9,8 @@ using Quamotion.Runtime;
 using Quamotion.CodedUI.Controls;
 using Quamotion.Runtime.UI;
 using System.Linq;
+using System.Diagnostics;
+using System.Threading;
 
 namespace qm_test
 {
@@ -33,12 +35,11 @@ namespace qm_test
         [DeploymentItem(@"apps\", @"apps\")]
         public void MobileCodedUITestMethod1()
         {
-            
             var settings = MobileTestSettings.Open(this.MobileTestSettingsFile);
             TargetDevice targetDevice = settings.Devices.First();
             IDeviceProvider deviceprovider = DeviceProviderFactory.Instance.GetProvider(targetDevice.ProviderId);
             var devices = deviceprovider.Devices;
-            Assert.IsTrue(devices.Count == 1, String.Format("{0} devices found", devices.Count));
+            Assert.IsTrue(devices.Count > 200, String.Format("{0} devices found", devices.Count));
             base.Initialize();
 
         }
