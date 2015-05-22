@@ -1,5 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UITest.Extension;
+using Microsoft.VisualStudio.TestTools.UITesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Quamotion.CodedUI.Controls;
+using System;
+using System.Reflection;
 
 namespace qm_test
 {
@@ -25,6 +29,10 @@ namespace qm_test
         [AssemblyInitialize]
         public static void Intialize(TestContext context)
         {
+            Type uITestUtilitiesType = typeof(QueryElement).Assembly.GetType("Microsoft.VisualStudio.TestTools.UITest.Extension.UITestUtilities");
+            FieldInfo userInteractiveFieldInfo = uITestUtilitiesType.GetField("UserInteractive", BindingFlags.Static |BindingFlags.Public | BindingFlags.NonPublic);
+            userInteractiveFieldInfo.SetValue(null, true);
+
             AssemblyHelpers.Initialize(context);
         }
 
