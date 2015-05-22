@@ -14,4 +14,4 @@ install:
 build_script:
   - msbuild qm-test\qm-test.csproj /p:Configuration=Release /p:Platform=AnyCPU /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 after_test:
-  -cmd : "C:\Program Files (x86)\Quamotion\bin\Quamotion.CommandLine.exe" -m Harvest
+  -cmd : C:\Progra~2\Quamotion\bin\Quamotion.CommandLine.exe' -m Harvest
