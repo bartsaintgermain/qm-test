@@ -32,7 +32,6 @@ namespace qm_test
             //Type uITestUtilitiesType = typeof(Playback).Assembly.GetType("Microsoft.VisualStudio.TestTools.UITest.Extension.UITestUtilities");
             //FieldInfo userInteractiveFieldInfo = uITestUtilitiesType.GetField("UserInteractive", BindingFlags.Static |BindingFlags.Public | BindingFlags.NonPublic);
             //userInteractiveFieldInfo.SetValue(null, true);
-            Playback.IsInitialized = true;
             AssemblyHelpers.Initialize(context);
         }
 

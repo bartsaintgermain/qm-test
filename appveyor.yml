@@ -1,5 +1,5 @@
 version: 1.0.{build}.0
-
+os: Unstable
 environment:
   rtkUserName:
     secure: fNrV+FdqnGE/HKs/4C4rPh7VmjsvPNbks4Enmrma/SM=
